@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>memberRegister.html</title>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>아이디</td>
+			<td>비밀번호</td>
+			<td>이름</td>
+			<td>전화번호 </td>
+			<td>직업 <select name="job">
+					<option value="student">학생</option>
+					<option value="nojob">무직</option>
+			</select>
+			</td>
+			<td>성별 <input type="radio" name="gender" value="man" checked>남자
+				<input type="radio" name="gender" value="woman">여자
+			</td>
+			<td>취미 <input type="checkbox" name="hobby" value="reding">독서
+				<input type="checkbox" name="hobby" value="game">게임 <input
+				type="checkbox" name="hobby" value="movie">영화감상 <input
+				type="checkbox" name="hobby" value="music">음악감상 <input
+				type="checkbox" name="hobby" value="soccer">축구 자기 소개하는글
+			<td><textarea cols="30" rows="5" name="memo"></textarea></td>
+			<td><input type="submit" value="등록하기"><input
+				type="reset" value="취소하기"> </td>
+		</tr>
+		<tr>
+			<td><input type="text" name="id" autofocus required></td>
+			<td><input type="password" name="pw"></td>
+			<td><input type="text" name="name"></td>
+			<td><input type="number" name="tel"></td>
+		</tr>
+	</table>
+</body>
+</html>
