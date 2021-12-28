@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css/layout.html</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-size: 12px;
+        }
+
+        header {
+            height: 50px;
+            background-color: wheat;
+        }
+
+        nav {
+            background-color: rgb(197, 230, 109);
+            width: 25%;
+            height: 60vh; 
+            float: left;
+        }
+
+        main {
+            background-color: rgb(248, 240, 224);
+            width: 50%;
+            height: 60vh;
+            float: left;
+        }
+
+        aside {
+            background-color: rgb(245, 234, 215);
+            width: 25%;
+            height: 60vh;
+            float: left;
+        }
+
+        footer {
+            background-color: rgb(158, 230, 124);
+            clear: both;
+            height: 15vh;
+            text-align: center;
+        }
+
+        header>ul {
+            list-style-type: none;
+        }
+
+        header li {
+            display: inline-block;
+            width: 20%;
+            margin: 15px 15px;
+        }
+
+        .menu {
+            font-size: .9em;
+            padding-left: 15px;
+            margin-top: 30px;
+        }
+
+        .category {
+            padding-bottom: 5px;
+            background-color: rgb(116, 240, 182);
+            margin-bottom: 10px;
+            width: 80%;
+        }
+        a {
+            text-decoration: none;
+        }
+
+        aside>ul {
+            list-style-type: none;
+        }
+
+        aside li {
+            color : indianred;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- &lt; : < , &tg; : > -->
+        <!-- &lt;header&gt; -->
+        <ul>
+            <li>Home</li>
+            <li>게시판</li>
+            <li>FAQ</li>
+            <li>로그인</li>
+        </ul>
+    </header>
+    <nav>
+        <div class="menu">
+            <div class="category"><a href="#">게시판 카테고리</a></div>
+            <div class="category active"><a href="#">자유게시판</a></div>
+            <div class="category"><a href="#">리뷰게시판</a></div>
+            <div class="category"><a href="#">네이버 동영상 게시판</a></div>
+            <div class="category"><a href="#">자료실 게시판</a></div>
+        </div>
+    </nav>
+    <main>
+        <!-- &lt;main&gt; -->
+        <table>
+            <caption>자유 게시판</caption>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>제목</th>
+                    <th>글쓴이</th>
+                    <th>작성시간</th>
+                    <th>좋아요</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="no">10</td>
+                    <td class="title">네이버 지도(v5) 임베드</td>
+                    <td class="web">아임웹</td>
+                    <td class="date">2019-12-17</td>
+                    <td class="like">0</td>
+                </tr>
+                <tr>
+                    <td class="no">9</td>
+                    <td class="title">제목</td>
+                    <td class="web">아임웹</td>
+                    <td class="date">2019-12-16</td>
+                    <td class="like">0</td>
+                </tr>
+                <tr>
+                    <td class="no">8</td>
+                    <td class="title">구글 지도 게시물에 임베드 하기</td>
+                    <td class="web">아임웹</td>
+                    <td class="date">2019-12-16</td>
+                    <td class="like">0</td>
+                </tr>
+                <tr>
+                    <td class="no">7</td>
+                    <td class="title">아이폰7 플러스</td>
+                    <td class="web">아임웹</td>
+                    <td class="date">2018-05-14</td>
+                    <td class="like">0</td>
+                </tr>
+            </tbody>
+        </table>
+        <button>글쓰기</button>
+    </main>
+    <aside>
+        <!-- &lt;aside&gt; -->
+        <ul>디자인모드
+            <li>빠른 시작 가이드</li>
+            <li>디자인 모드란?</li>
+            <li>아엠 페이지 구조</li>
+            <li>공통 디자인 등록</li>
+        </ul>
+    </aside>
+    <footer>
+        <!-- &lt;footer&gt; -->
+        <p>상호명: (주)아이웹 | 대표이사: 이수모</p>
+        <p>본사: 서울특별시 서대문구 성산로7길 89-8</p>
+        <p>고객지원: 문의 게시판 또는 실시간 채팅</p>
+    </footer>
+</body>
+
+</html>

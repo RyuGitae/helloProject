@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exam.html</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 3px;
+        }
+
+        table {
+            border-top: 3px solid;
+
+        }
+
+        .like {
+            text-align: center;
+            color: gray;
+        }
+
+        th,
+        td {
+            line-height: 30px;
+            border-bottom: 1px solid;
+            border-color: gray;
+        }
+
+        caption {
+            text-align: left;
+            line-height: 70px;
+            font-weight: bold;
+        }
+
+        .title {
+            width: 500px;
+        }
+
+        .web {
+            text-align: center;
+            width: 100px;
+            color: gray;
+        }
+
+        .date {
+            color: gray;
+        }
+
+        .writer {
+            color: white;
+            text-align: right;
+            background-color: rgb(0, 162, 255);
+        }
+
+        .no {
+            text-align: center;
+            width: 50px;
+        }
+
+        .bar {
+            border-bottom: white;
+            padding: 1px;
+            box-sizing: border-box;
+        }
+
+        span {
+            border-bottom: 1px solid black;
+            border-top: 1px solid black;
+            margin: 0%;
+        }
+
+        div {
+            display: inline-block;
+            margin: 3%;
+            font-size: 15px;
+        }
+
+        div {
+            border: 1px solid black;
+            box-sizing: content-box;
+        }
+
+        .board {
+            background-color: rgb(0, 162, 255);
+            color: white;
+            line-height: 30px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <div>게시판 카테고리</div>
+        <div class="board">자유게시판</div>
+        <div>리뷰게시판</div>
+        <div>네이버 동영상 게시판</div>
+        <div>자료실 게시판</div>
+    </div>
+    <table>
+        <caption>자유 게시판</caption>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>제목</th>
+                <th>글쓴이</th>
+                <th>작성시간</th>
+                <th>좋아요</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="no">10</td>
+                <td class="title">네이버 지도(v5) 임베드</td>
+                <td class="web">아임웹</td>
+                <td class="date">2019-12-17</td>
+                <td class="like">0</td>
+            </tr>
+            <tr>
+                <td class="no">9</td>
+                <td class="title">제목</td>
+                <td class="web">아임웹</td>
+                <td class="date">2019-12-16</td>
+                <td class="like">0</td>
+            </tr>
+            <tr>
+                <td class="no">8</td>
+                <td class="title">구글 지도 게시물에 임베드 하기</td>
+                <td class="web">아임웹</td>
+                <td class="date">2019-12-16</td>
+                <td class="like">0</td>
+            </tr>
+            <tr>
+                <td class="no">7</td>
+                <td class="title">아이폰7 플러스</td>
+                <td class="web">아임웹</td>
+                <td class="date">2018-05-14</td>
+                <td class="like">0</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td class="bar"></td>
+                <td class="bar"></td>
+                <td class="bar"></td>
+                <td class="bar"></td>
+                <td class="writer">글쓰기</td>
+            </tr>
+        </tfoot>
+        
+    </table>
+
+</body>
+
+</html>

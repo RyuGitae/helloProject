@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- 디스플레이 속성에 따라서 차지하는 영역 설정 inline은 자기구역 만큼만 block은 전체-->
+    <!-- 디스플레이 inline에서 width나 height가 적용안됨-->
+    <!-- inline block은 width나 height가 적용됨-->
+    <style>
+        div {
+            border: 1px dotted red;
+            display: inline-block;
+            width: 100px;
+        }
+
+        span {
+            border: 1px dotted blue;
+            display: block;
+            width: 100px;
+        }
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html/div_span.html</title>
+</head>
+
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <!-- span{$}*3-->
+    <span>1</span><span>2</span><span>3</span>
+</body>
+
+</html>
