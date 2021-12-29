@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css/position</title>
+    <style>
+        body {
+            border: 1px solid grey;
+        }
+        p {
+            border: 1px solid grey;
+        }
+        #pos1 {
+            width: 200px;
+            position: static;
+            top: 50px;
+        }
+        
+        #pos2 {
+            width: 230px;
+            position: sticky; /*sticky는 자기 위치를 지키고있다가 페이지에서 사라지려고하면 위치 조정*/
+            top: 30px;
+            left: 50px;
+        }
+        
+        #pos3 {
+            width: 270px;
+            position: sticky;
+            top: 50px;
+        }
+
+        #css3 {
+            position: absolute;
+            top: -40px;
+            left: -50px;
+            color: blue;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p id='pos1'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi obcaecati quibusdam perspiciatis alias
+        consequuntur libero, maiores culpa distinctio provident ducimus laudantium sed earum tenetur. A tempora possimus
+        facilis quis totam?</p>
+    <p id='pos2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi obcaecati quibusdam perspiciatis alias
+        consequuntur libero, maiores culpa distinctio provident ducimus laudantium sed earum tenetur. A tempora possimus
+        facilis quis totam?</p>
+    <p id='pos3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi obcaecati quibusdam perspiciatis alias
+        consequuntur libero, maiores culpa distinctio provident ducimus laudantium sed earum tenetur. A tempora possimus
+        facilis quis totam?</p>
+
+        <img src="../images/image1.PNG" width="400px" alt="뉴욕 전경">
+        <span id='css3'>CSS3</span>
+    </body>
+
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css/item.html</title>
+    <style>
+         * {
+            margin: 0;
+            padding: 0;
+            /* box-sizing: border-box; */
+        }
+        .item {
+            /* box-sizing: content-box; */
+            font-size : 15px;
+            /* border: 1px solid black; */
+            margin: 0;
+            
+            width: 1200px;
+        }
+        .goods {         
+            width:500px;
+            /* border: 1px solid black; */
+            margin: 0;
+            text-align: center;
+        }
+        
+        .image {
+        width:500px;
+        margin: 10px;
+        float: left;
+        /* border-bottom: 1px solid black; */
+        text-align: center;
+        padding-top: 10px;
+        }
+
+        .plus {
+            padding: 10px;
+        }
+        
+        .order {
+            margin: 3px;
+            width:500px;
+            list-style-type: none;
+            /* border: 1px solid black; */
+            float: left;
+        }
+        
+        .title {
+            font-weight: bold;
+            padding-left: 10px;
+            border-bottom: 3px solid black;
+            margin-bottom: 10px;
+            font-size:20px;
+            padding-bottom: 10px;
+        }
+
+        li {
+            padding-bottom: 10px;
+            
+        }
+        
+        .color {
+            border-top: 1px solid black;
+            border-bottom: 3px solid black;
+            padding-top: 10px;
+            font-size: 18px;
+        }
+
+        .공유 {
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="item">
+        <div class="goods">
+            홈 >
+            <select name="종류">
+                <option value="단체모자 | 단체티제작" selected>단체모자 | 단체티제작</option>
+                <option value="신상품">신상품</option>
+                <option value="베스트셀러">베스트셀러</option>
+            </select>
+            > <select name="모자종류">
+                <option value="무지모자" selected>무지모자</option>
+                <option value="캡|야구모자">캡 | 야구모자</option>
+                <option value="벙거지모자(기능성)">벙거지모자(기능성)</option>
+            </select>
+
+        </div>
+        <div class="image">
+            <img style="width: 450px" src="../images/cap.png"  alt="모자">
+            <div class="plus">확대보기</div>
+        </div>
+        <div class="order">
+            <div class="title">(Y) 72121-HU 캐주얼 무지캠프캡&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                <select name="공유" class="공유">
+                    <option value="공유">공유</option>
+                </select></div>
+            <li><strong>판매가</strong><span>&nbsp;</span></li>
+            <li><strong>구매제한</strong>&nbsp;&nbsp;&nbsp;&nbsp;<span>최소 1개</span></li>
+            <li><strong>배송비</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>2,500원<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;택배 / 주문시결제(선결제)</br></span></li>
+            <li><strong>상품코드</strong>&nbsp;&nbsp;&nbsp;&nbsp;<span>1000000329</span></li>
+            <li><strong>제조사</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>MILLITAGE</span></li>
+            <li><strong>원산지</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>made in korea</span></li>
+            <li><strong>샘플가격</strong>&nbsp;&nbsp;&nbsp;&nbsp;<span>샘플(1개) 구매가능</span></li>
+            <li><strong>결제수단</strong>&nbsp;&nbsp;&nbsp;&nbsp;<span>무통장입금, 신용카드, 실시간 계좌이체</span></li>
+            <li><strong>VAT</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>10%별도</span></li>
+            <div>
+                <li class="color"><strong>color</strong> 
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <select name="색상">
+                        <option value="옵션 : 가격"> = 옵션 : 가격 = </option>
+                    </select>
+                </li>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
