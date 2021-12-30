@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html/board_list.html</title>
+    <style>
+        * {
+            /* margin: 0;
+            padding: 0; */
+        }
+
+        .container {
+            width:90vw;
+            margin:10px auto;
+            border:1px solid red;
+        }
+        header {
+            color: white;
+            background-color: blue;
+            width: 100%;
+        }
+
+
+        .header div:nth-child(1) {
+            display: inline-block;
+            width:65%;
+
+        }
+        .header div:nth-child(2) {
+            display: inline-block;
+            width:10%;
+            
+        }
+        .header div:nth-child(3) {
+            display: inline-block;
+            width:10%;
+            
+        }
+        .header div:nth-child(4) {
+            display: inline-block;
+            width:10%;
+            
+        }
+
+        .header {
+            padding:10px;
+            background-color: black;
+            /* width: 100vh; */
+        }
+
+        
+
+        /* header .header2,
+        .header3,
+        .header4 {} */
+
+        sidebar {
+            width: 20%;
+            float: left;
+            border:1px solid red;
+            height: 418px;
+        }
+
+        .board_list_head {
+            display: flex;
+            font-weight: bold;
+            /* text-align: center; */
+        }
+
+        .board_list_head>div {
+            margin: auto 0;
+            padding: auto 0;
+            display: inline-block;
+            padding:8px;
+        }
+
+        .board_list_body>.content>div {
+            margin: auto 0;
+            padding: auto 0;
+            display: inline-block;
+            padding:8px;
+        }
+
+        .board_list_head .write1 {
+            text-align: center;
+        }
+
+        main {
+            border: 1px solid black;
+            width: 79%;
+            float: left
+        }
+
+        .board_list_body>.content {
+            display: flex;
+        }
+
+        .write1 {
+            width: 40vh;
+            border-bottom: 1px solid gray;
+        }
+
+        .write2 {
+            text-align: center;
+            width: 10vh;
+            border-bottom: 1px solid gray;
+        }
+
+        .write3 {
+            text-align: center;
+            width: 20vh;
+            border-bottom: 1px solid gray;
+        }
+
+        .write4 {
+            text-align: center;
+            width: 10vh;
+            border-bottom: 1px solid gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="header">
+                <div class="header1">Codevang's Page</div>
+                <div class="header2">홈</div>
+                <div class="header3">로그아웃</div>
+                <div class="header4">회원정보</div>
+            </div>
+        </header>
+        <sidebar>
+            <div>
+                <div>Category</div>
+                <div>게시판</div>
+                <div>일반게시판</div>
+                <div>코딩게시판</div>
+            </div>
+        </sidebar>
+        <main>
+            <div class="board_list">
+                <div class="board_list_head">
+                    <div class="write1">제목</div>
+                    <div class="write2">글쓴이</div>
+                    <div class="write3">작성일</div>
+                    <div class="write4">조회수</div>
+                </div>
+                <div class="board_list_body">
+                    <div class="content">
+                        <div class="write1">안녕하세요</div>
+                        <div class="write2">codevang</div>
+                        <div class="write3">2020/03/02 11:03:47</div>
+                        <div class="write4">0</div>
+                    </div>
+                    <div class="content">
+                        <div class="write1">ㅇㅇㅇ</div>
+                        <div class="write2">codevang</div>
+                        <div class="write3">2020/03/01 23:40:01</div>
+                        <div class="write4">1</div>
+                    </div>
+                    <div class="content">
+                        <div class="write1">이제 되겠지..!</div>
+                        <div class="write2">codevang</div>
+                        <div class="write3">2020/03/01 23:38:40</div>
+                        <div class="write4">2</div>
+                    </div>
+                    <div class="content">
+                        <div class="write1">┖re: 답글을 써보자!</div>
+                        <div class="write2">codevang</div>
+                        <div class="write3">2020/03/02 11:04:01</div>
+                        <div class="write4">0</div>
+                    </div>
+                    <div class="content">
+                        <div class="write1">다시</div>
+                        <div class="write2">codevang</div>
+                        <div class="write3">2020/03/01 23:38:04</div>
+                        <div class="write4">2</div>
+                    </div>
+                    <div class="content">
+                        <div class="write1">┖re: 안뇽안뇽</div>
+                        <div class="write2">codevang</div>
+                        <div class="write3">2020/03/02 11:04:15</div>
+                        <div class="write4">1</div>
+                    </div>
+                    <div class="content">
+                        <div class="write1">┖re: 나도 안뇽</div>
+                        <div class="write2">codevang</div>
+                        <div class="write3">2020/03/02 11:04:28</div>
+                        <div class="write4">1</div>
+                    </div>
+                    <div class="content">
+                        <div class="write1">┖re: 잘 지내뉴</div>
+                        <div class="write2">codevang</div>
+                        <div class="write3">2020/03/02 11:04:39</div>
+                        <div class="write4">0</div>
+                    </div>
+                    <div class="content">
+                        <div class="write1">잘되는지 확인해보자</div>
+                        <div class="write2">codevang</div>
+                        <div class="write3">2020/03/01 23:22:07</div>
+                        <div class="write4">3</div>
+                    </div>
+                    <div class="content">
+                        <div class="write1">┖re: 여기도 잘 됩니까!</div>
+                        <div class="write2">codevang</div>
+                        <div class="write3">2020/03/01 23:22:07</div>
+                        <div class="write4">0</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
