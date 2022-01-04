@@ -1,66 +1,373 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>게시판 목록 - div로 만들기</title>
-        <link rel="stylesheet" href="../html/style.css">
-    </head>
-    <body>
-        <div class="board_list_wrap">
-            <div class="board_list">
-                <div class="board_list_head">
-                    <div class="num">번호</div>
-                    <div class="tit">제목</div>
-                    <div class="writer">글쓴이</div>
-                    <div class="date">작성일</div>
-                    <div class="view">조회</div>
-                </div>
-                <div class="board_list_body">
-                    <div class="item">
-                        <div class="num">5</div>
-                        <div class="tit"><a href="#">크롬 개발자도구 활용하는 방법</a></div>
-                        <div class="writer">관리자</div>
-                        <div class="date">2019-11-20</div>
-                        <div class="view">111</div>
-                    </div>
-                    <div class="item">
-                        <div class="num">4</div>
-                        <div class="tit"><a href="#">html과 css로 웹사이트를 만들어요.</a></div>
-                        <div class="writer">관리자</div>
-                        <div class="date">2019-11-12</div>
-                        <div class="view">222</div>
-                    </div>
-                    <div class="item">
-                        <div class="num">3</div>
-                        <div class="tit"><a href="#">코딩은 즐거워요.</a></div>
-                        <div class="writer">관리자</div>
-                        <div class="date">2019-11-02</div>
-                        <div class="view">333</div>
-                    </div>
-                    <div class="item">
-                        <div class="num">2</div>
-                        <div class="tit"><a href="#">전주코딩학원은 전주 법조타운에 있습니다.</a></div>
-                        <div class="writer">관리자</div>
-                        <div class="date">2019-10-28</div>
-                        <div class="view">222</div>
-                    </div>
-                    <div class="item">
-                        <div class="num">1</div>
-                        <div class="tit"><a href="#">전주코딩학원 공지사항</a></div>
-                        <div class="writer">관리자</div>
-                        <div class="date">2019-10-24</div>
-                        <div class="view">111</div>
-                    </div>
-                </div>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index.html</title>
+    <style>
+        .container {
+            width: 1200px;
+            height: 800px;
+            margin: 20px auto;
+
+        }
+
+
+        header {
+            width: 100%;
+            height: 30px;
+            border-top: 1px solid rgb(211, 208, 208);
+            border-bottom: 1px solid rgb(211, 208, 208);
+            text-align: center;
+            font-size: 15px;
+            padding-top: 10px;
+        }
+
+        header>span {
+            margin: 20px;
+            color: black;
+        }
+
+        header span:hover {
+            color: green;
+            padding-bottom: 9px;
+            border-bottom: 3px solid green;
+        }
+
+        nav {
+            float: left;
+            width: 20%;
+            height: 30%;
+            margin: 0;
+            text-align: center;
+        }
+
+        nav>h1 {
+
+            font-size: 25px;
+            margin-left: 25px;
+            margin-right: 15px;
+            margin-bottom: 5px;
+            margin-top: 20px;
+            padding-left: 0px;
+            padding-right: 60px;
+            padding-top: 5px;
+            padding-bottom: 10px;
+            border-top: 1px solid white;
+            border-left: 1px solid white;
+            border-right: 1px solid white;
+            border-bottom: 1px solid rgb(211, 208, 208);
+        }
+
+        nav select {
+            font-size: 15px;
+            margin-left: 10px;
+
+            padding-right: 60px;
+            padding-top: 5px;
+            padding-bottom: 10px;
+            border-top: 1px solid white;
+            border-left: 1px solid white;
+            border-right: 1px solid white;
+            border-bottom: 1px solid rgb(211, 208, 208);
+
+        }
+
+        nav select:hover {
+            background-color: green;
+            color: white;
+        }
+
+        main {
+            width: 80%;
+            height: 600px;
+            float: left;
+        }
+
+        main .caption2 {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            text-align: left;
+            font-weight: bold;
+            font-size: 30px;
+            border-bottom: 1px solid black;
+        }
+        
+        main div {
+            display: inline-block;
+            text-align: center;
+            font-size: 15px;
+            margin-top: 10px;
+            margin-left: 27px;
+            margin-right: 20px;
+        }
+
+        main .n1:hover {
+            border-radius : 30px;
+            padding-right: 10px;
+            padding-left:10px;
+            background-color: green;
+        }
+
+        table {
+            border-collapse: collapse;
+
+        }
+
+        table .home {
+            padding-top :10px;
+            font-size: 15px;
+
+        }
+
+        caption #share {
+            float: right;
+            padding-right: 20px;
+
+        }
+
+        caption #print {
+            float: right
+        }
+
+        thead td {
+            font-size: 14px;
+            padding-top: 20px;
+            padding-bottom: 10px;
+        }
+
+        thead .select1 {
+            float: right;
+            font-size: 20px;
+            padding-right: 20px;
+        }
+
+        thead .select2 {
+            clear: right;
+            font-size: 20px;
+
+        }
+        
+        .theadtr {
+            border-bottom: 1px solid black;
+        }
+        thead tr>th {
+            text-align: center;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgb(211, 208, 208);
+        }
+        tbody {
+            font-size: 14px;
+        }
+
+
+        tbody tr>td {
+            padding: 10px;
+            border-bottom: 1px solid rgb(211, 208, 208);
+        }
+
+        tbody tr>.td1 {
+            text-align: center;
+        }
+
+        tbody tr>.td2 {
+            text-align: left;
+        }
+
+        tbody .td2:hover {
+            border-bottom: 1px solid green;
+        }
+
+    </style>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <span>감염병</span>
+            <span>건강정보</span>
+            <span>정책정보</span>
+            <span>연구개발</span>
+            <span>알림ㆍ자료</span>
+            <span>간행물ㆍ통계</span>
+            <span>민원ㆍ정보공개</span>
+            <span>기관소개</span>
+            <span>사업별 누리집</span>
+        </header>
+
+        <nav>
+            <h1 class="nav1">알림ㆍ자료</h1>
+            <select name=>
+                <option value="#" selected>이달의건강소식&nbsp;&nbsp;&nbsp;</option>
+            </select><br>
+            <select name=>
+                <option value="#" selected>
+                    보도자료&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+            </select> <br>
+            <select name=>
+                <option value="#" selected>
+                    포토뉴스&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+            </select> <br>
+            <select name=>
+                <option value="#" selected>
+                    홍보자료&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+            </select> <br>
+            <select name=>
+                <option value="#" selected>
+                    공지사항&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+            </select> <br>
+            <select name=>
+                <option value="#" selected>
+                    공고/공시&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+            </select> <br><select name=>
+                <option value="#" selected>
+                    채용공고&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+            </select> <br><select name=>
+                <option value="#" selected>법령ㆍ지침ㆍ서식</option>
+            </select>
+
+        </nav>
+
+        <main>
+            <table>
+                <caption class="home">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="material-icons">
+                        home
+                    </span> > 알림ㆍ자료 > 공고/공시</caption>
+                <caption class="caption2">공고/공시
+                    <span class="material-icons" id="print">
+                        print
+                    </span>
+                    <span class="material-icons" id="share">
+                        share
+                    </span>
+                </caption>
+
+                <thead>
+                    <tr class= 'theadtr'>
+                        <td>전체 3,302건, 현재페이지 2/332
+                        <td><select class="select1">
+                                <option value="#" selected>제목</option>
+                            </select></td>
+                        <td><label class="select2"><input type="text" placeholder="검색어를 입력하세요"></label></td>
+                        <td><button><span class="material-icons">
+                                    search</span></button></td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>번호</th>
+                        <th>제목</th>
+                        <th>작성자</th>
+                        <th>작성일자</th>
+                        <th>조회수</th>
+                    </tr>
+                </thead>
+                <tbody>
+              
+                    <tr class='tr1'>
+                        <td class='td1'>3310</td>
+                        <td class='td2'> 「건강정보 개발 및 국가정보포털 운영」2022년 민간위ㆍㆍㆍ</td>
+                        <td class='td1'>만성질환예방과</td>
+                        <td class='td1'>2021-12-28</td>
+                        <td class='td1'>137</td>
+                    </tr>
+                    <tr class='tr1'>
+                        <td class='td1'>3309</td>
+                        <td class='td2'>국제공인예방접종지정기관 지정 공고</td>
+                        <td class='td1'>질병관리청 검역정책과</td>
+                        <td class='td1'>2021-12-23</td>
+                        <td class='td1'>305</td>
+                    </tr>
+                    <tr class='tr1'>
+                        <td class='td1'>3308</td>
+                        <td class='td2'>2022년 환전외국환은행 선정결과 공고</td>
+                        <td class='td1'>백신계약팀</td>
+                        <td class='td1'>2021-12-23</td>
+                        <td class='td1'>184</td>
+                    </tr>
+                    <tr class='tr1'>
+                        <td class='td1'>3307</td>
+                        <td class='td2'>2021년 질병관리청 정책연구용역(강원도 홍천군과 횡성군ㆍㆍㆍ</td>
+                        <td class='td1'>운영지원과</td>
+                        <td class='td1'>2021-12-20</td>
+                        <td class='td1'>378</td>
+                    </tr>
+                    <tr class='tr1'>
+                        <td class='td1'>3306</td>
+                        <td class='td2'>2021년 질병관리청 정책연구용역(국민건강영양조사 원시자ㆍㆍㆍ</td>
+                        <td class='td1'>운영지원과</td>
+                        <td class='td1'>2021-12-17</td>
+                        <td class='td1'>432</td>
+                    </tr>
+                    <tr class='tr1'>
+                        <td class='td1'>3305</td>
+                        <td class='td2'>2021년 질병관리청 건강영양조사분석과 정책연구용역(3건)ㆍㆍㆍ</td>
+                        <td class='td1'>운영지원과</td>
+                        <td class='td1'>2021-12-14</td>
+                        <td class='td1'>770</td>
+                    </tr>
+                    <tr class='tr1'>
+                        <td class='td1'>3304</td>
+                        <td class='td2'> 「제1차 기후보건영향평가」 공청회 개최 공고</td>
+                        <td class='td1'>미래질병대비과</td>
+                        <td class='td1'>2021-12-08</td>
+                        <td class='td1'>438</td>
+                    </tr>
+                    <tr class='tr1'>
+                        <td class='td1'>3303</td>
+                        <td class='td2'>2021년 질병관리청 정책연구용역(인권 관점의 방역세계 구ㆍㆍㆍ</td>
+                        <td class='td1'>운영지원과</td>
+                        <td class='td1'>2021-12-07</td>
+                        <td class='td1'>633</td>
+                    </tr>
+                    <tr class='tr1'>
+                        <td class='td1'>3302</td>
+                        <td class='td2'>2021년 질병관리청 만성질환 관리과 정책연구용역(4건)입ㆍㆍㆍ</td>
+                        <td class='td1'>운영지원과</td>
+                        <td class='td1'>2021-12-07</td>
+                        <td class='td1'>583</td>
+                    </tr>
+                    <tr class='tr1'>
+                        <td class='td1'>3301</td>
+                        <td class='td2'>2021년 질병관리청 정책연구용역(404호,405호)입찰 공고ㆍㆍㆍ</td>
+                        <td class='td1'>운영지원과</td>
+                        <td class='td1'>2021-12-06</td>
+                        <td class='td1'>500</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                </tfoot>
+            </table>
+            <div class="number">
+
+                <div class="n1">&lt;&lt;</div>
+                <div class="n1">&lt;</div>
+                <div class="n1">1</div>
+                <div class="n1">2</div>
+                <div class="n1">3</div>
+                <div class="n1">4</div>
+                <div class="n1">5</div>
+                <div class="n1">6</div>
+                <div class="n1">7</div>
+                <div class="n1">8</div>
+                <div class="n1">9</div>
+                <div class="n1">10</div>
+                <div class="n1">&gt;</div>
+                <div class="n1">&gt;&gt;</div>
             </div>
-            <div class="paging">
-                <a href="#" class="bt first">처음 페이지</a>
-                <a href="#" class="bt prev">이전 페이지</a>
-                <a href="#" class="num on">1</a>
-                <a href="#" class="num">2</a>
-                <a href="#" class="num">3</a>
-                <a href="#" class="bt next">다음 페이지</a>
-                <a href="#" class="bt last">마지막 페이지</a>
-            </div>
-        </div>
-    </body>
+        </main>
+    </div>
+
+</body>
+
 </html>
