@@ -16,17 +16,48 @@
         #tbl>tbody>tr:nth-child(2n+1) {
             background-color: pink;
         }
+
+        span:not(:empty) {
+            display: inline-block;
+            padding: 3px;
+            border: 1px solid grey;
+            margin: 5px;
+            width: 40px;
+            text-align: center;
+        }
+
+        span:empty {
+            display:inline-block;
+            padding: 3px;
+            margin: 5px 6px;
+            width: 40px;
+        }
+
+        .sunday {
+            background-color: red;
+            color: white;
+        }
+        .saturday {
+            background-color: blue;
+            color: white;
+        }
+
     </style>
     <script>
         console.log('hello, world!');
         document.write('<h3>hello, world</h3>');
         // window.alert('hello world');
     </script>
-    <script src="control.js"></script>
+    <!-- <script src="calendar.js"></script> -->
 </head>
 
 <body>
-
+    <div id="show"></div>
+    <script src="string1.js"></script>
+    <script>
+        // document.querySelector('h3').innerHTML = 'Nice, World';
+        // document.querySelector('h3').style.background = 'yellow';
+    </script>
 </body>
 
 </html>
