@@ -8,7 +8,60 @@
     <link rel="stylesheet" href="style.css">
     <title>javascript/index.html</title>
     <style>
-        div:not(#show) {
+        #add {
+            border: 1px solid grey;
+            width: 70%;
+            float: left;
+            margin: 5px;
+            padding: 10px;
+        }
+
+        .row {
+            margin: 5px 10px;
+        }
+
+        .row>label {
+            display: inline-block;
+            width: 15%;
+        }
+
+        .row>input {
+            display: inline-block;
+            width: 75%;
+        }
+
+        #btn {
+            /* border: 1px solid grey; */
+            margin: 5px;
+            float: left;
+            width: 20%;
+            height: 140px;
+        }
+
+        #btn>button {
+            margin-top: 20px;
+            width: 100px;
+        }
+
+        #list {
+            float: left;
+            border: 1px solid grey;
+            width: 93%;
+            height: 300px;
+            margin-left: 5px;
+        }
+
+        #list table {
+            width: 97%;
+            margin: 10px auto;
+        }
+        th,td {
+            padding: 3px 5px;
+            text-align: center;
+        }
+    
+
+        /* div:not(#show) {
             display: inline-block;
             width: 100px;
             height: 100px;
@@ -18,7 +71,7 @@
             font-size: 30px;
             text-align: center;
             line-height: 100px;
-        }
+        } */
     </style>
     <!-- <script>
         // console.log('hello, world!');
@@ -32,19 +85,53 @@
     // document.querySelector('h3').style.background = 'yellow';
 </script> -->
 
-<body>
-    <div id="show"></div>
-    <input type="text" id="sname"><button id="delBtn">조회삭제</button>
-    <!-- button : element, id: attribute, textnode -->
+<body id="bdy">
+    <div id="show">
+        <div id="add">
+            <div class="row">
+                <label for="">이름</label>
+                <input type="text" name="name">
+            </div>
+            <div class="row">
+                <label for="">연락처</label>
+                <input type="text" name="phone">
+            </div>
+            <div class="row">
+                <label for="">주소</label>
+                <input type="text" name="addr">
+            </div>
+            <div class="row">
+                <label for="">이메일</label>
+                <input type="text" name="email">
+            </div>
+        </div>
+        <div id="btn">
+            <button>등록</button>
+            <button>선택삭제</button>
+        </div>
+        <div id="list"></div>
+        <!-- <table border="1">
+            <thead>
+
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table> -->
+    </div>
+    <!-- <input type="text" id="sname">
+    <button id="delBtn">조회삭제</button>
+    <button id="addBtn">추가</button>
+     button : element, id: attribute, textnode 
     <p>helo</p>
-    <ul>
+    <ul id="nameList">
         <li>김은서</li>
         <li>황보경</li>
         <li>고권영</li>
         <li>류기태</li>
         <li>구자현</li>
-    </ul>
-    <script src="dom1.js"></script>
+    </ul> -->
+    <script src="dom5.js"></script>
 
 </body>
 

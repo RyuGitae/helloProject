@@ -18,7 +18,7 @@ document.getElementById('delBtn').onclick = function () {
     let sname = document.getElementById('sname').value;
     let liTag = document.createElement('li');
     liTag.innerHTML = sname;
-    let ul = document.querySelector('ul');
+    let ul = document.querySelectorD('ul');
     ul.appendChild(liTag);
 }
 
