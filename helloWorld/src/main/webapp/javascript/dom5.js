@@ -177,7 +177,7 @@ function showInfo1() {
 
 let phones = document.querySelectorAll('table tbody tr td:nth-child(3)');
 for (let i = 0; i <phones.length; i++) {
-    phones[i].addEventListener('click', showInfo2);
+    names[i].addEventListener('click', showInfo2);
 }
 
 function showInfo2() {
@@ -186,7 +186,7 @@ function showInfo2() {
 }
 let adresss = document.querySelectorAll('table tbody tr td:nth-child(4)');
 for (let i = 0; i <adresss.length; i++) {
-    adresss[i].addEventListener('click', showInfo3);
+    names[i].addEventListener('click', showInfo3);
 }
 
 function showInfo3() {
@@ -195,7 +195,7 @@ function showInfo3() {
 }
 let email = document.querySelectorAll('table tbody tr td:nth-child(5)');
 for (let i = 0; i <email.length; i++) {
-    email[i].addEventListener('click', showInfo4);
+    names[i].addEventListener('click', showInfo4);
 }
 
 function showInfo4() {
