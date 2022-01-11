@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>index.html</title>
+    <style>
+        body {
+            border-top: 1px solid black;
+        }
+        #add {
+            width: 70%;
+            float: left;
+            margin: 5px;
+            padding: 10px;
+        }
+
+        .row {
+            margin: 5px 10px;
+        }
+
+        .row>label {
+            display: inline-block;
+            background-color: rgb(161, 161, 161);
+            text-align: center;
+            width: 30%;
+        }
+
+        .row>input {
+            display: inline-block;
+            width: 65%;
+        }
+
+        #btn {
+            margin: 5px;
+            float: left;
+            width: 20%;
+            height: 140px;
+        }
+
+        #btn>button {
+            margin-top: 20px;
+            width: 100px;
+        }
+
+        #list {
+            float: left;
+            border: 1px solid black;
+            width: 93%;
+            height: 300px;
+            margin-left: 5px;
+        }
+
+        #list table {
+            width: 99%;
+            margin: 10px auto;
+        }
+        
+        th {
+            background-color: grey;
+            color: white;
+        }
+        th,td {
+            padding: 10px 5px;
+            text-align: center;
+            
+        }
+
+        td {
+            border-left: 1px solid white;
+            border-right: 1px solid white;
+        }
+        
+        
+    </style>
+    
+</head>
+
+
+<body id="bdy">
+    <div id="show">
+        <div id="add">
+            <div class="row">
+                <label for="">도서코드</label>
+                <input type="text" name="bookCode">
+            </div>
+            <div class="row">
+                <label for="">도서명</label>
+                <input type="text" name="bookName">
+            </div>
+            <div class="row">
+                <label for="">저자</label>
+                <input type="text" name="writter">
+            </div>
+            <div class="row">
+                <label for="">출판사</label>
+                <input type="text" name="company">
+            </div>
+            <div class="row">
+                <label for="">금액</label>
+                <input type="text" name="price">
+            </div>
+        </div>
+        <div id="btn">
+            <button>저장</button>
+            <button>선택삭제</button>
+        </div>
+        <div id="list"></div>
+     
+    </div>
+
+    <!-- <script src="exam.js"></script> -->
+    <script>
+        // exam.js
+
+const data = [{
+    bookCode: 'P12301285',
+    bookName: '이것이 자바다',
+    writter: '홍성문',
+    company: '신흥출판사',
+    price: '25,000원'
+}, {
+    bookCode: 'P12301285',
+    bookName: '이것이 자바다',
+    writter: '홍성문',
+    company: '신흥출판사',
+    price: '25,000원'
+}, {
+    bookCode: 'P12301285',
+    bookName: '이것이 자바다',
+    writter: '홍성문',
+    company: '신흥출판사',
+    price: '25,000원'
+}, {
+    bookCode: 'P12301285',
+    bookName: '이것이 자바다',
+    writter: '홍성문',
+    company: '신흥출판사',
+    price: '25,000원'
+}, {
+    bookCode: 'P12301285',
+    bookName: '이것이 자바다',
+    writter: '홍성문',
+    company: '신흥출판사',
+    price: '25,000원'
+}];
+
+// thead 영역
+function makeHead() {
+    const fields = ['도서코드', '도서명', '저자', '출판사', '가격', '삭제'];
+    let thd = document.createElement('thead');
+    let tr = document.createElement('tr');
+    // 체크박스
+    let th = document.createElement('th');
+    let checkbox = document.createElement('input');
+    checkbox.setAttribute('type', 'checkbox');
+    checkbox.addEventListener('change', allCheckFnc);
+    th.appendChild(checkbox);
+    tr.appendChild(th);
+    // 필드영역
+    fields.forEach(function (field) {
+        let th = document.createElement('th');
+        let text = document.createTextNode(field);
+        th.appendChild(text);
+        tr.appendChild(th);
+    });
+    thd.appendChild(tr);
+    return thd;
+}
+
+
+function allCheckFnc() {
+    let chks = document.querySelectorAll('tbody input[type="checkbox"]');
+    for (let i = 0; i < chks.length; i++) {
+        chks[i].checked = this.checked;
+    }
+
+}
+
+// tbody 영역
+function makeBody() {
+    let tbd = document.createElement('tbody');
+    data.forEach(function (obj) {
+        tbd.appendChild(makeTr(obj));
+    });
+    return tbd;
+}
+// tr 생성.
+function makeTr(item) {
+    let tr = document.createElement('tr');
+    // 체크박스.
+    let td = document.createElement('td');
+    let checkbox = document.createElement('input');
+    checkbox.setAttribute('type', 'checkbox');
+    td.appendChild(checkbox);
+    tr.appendChild(td);
+    for (let field in item) {
+        let td = document.createElement('td');
+        let text = document.createTextNode(item[field]);
+        td.appendChild(text);
+        tr.appendChild(td);
+    }
+  
+     // 삭제버튼
+     td = document.createElement('td')
+     let btn = document.createElement('button')
+     btn.setAttribute('id', 'del')
+     btn.textContent = "삭제"
+     btn.onclick = function (e) {
+         e.target.parentNode.parentNode.remove()
+     }
+     td.appendChild(btn)
+     tr.appendChild(td)
+ 
+    return tr;
+
+}
+
+
+(function () {
+    let tbl = document.createElement('table');
+    tbl.setAttribute('border', '1');
+
+    tbl.appendChild(makeHead());
+    tbl.appendChild(makeBody());
+    document.getElementById('list').appendChild(tbl);
+}());
+
+// 등록버튼 이벤트
+let addBtn = document.querySelector('#btn>button');
+addBtn.addEventListener('click', addCallback);
+
+function addCallback() {
+    let bookCode = document.querySelector('input[name="bookCode"]').value;
+    let bookName = document.querySelector('input[name="bookName"]').value;
+    let writter = document.querySelector('input[name="writter"]').value;
+    let company = document.querySelector('input[name="company"]').value;
+    let price = document.querySelector('input[name="price"]').value;
+
+    if (bookCode == "" || bookName == "" || writter == "" || company == "" || price == "") {
+        window.alert('필수값을 입력하세요!!');
+        return;
+    }
+
+    let obj = {
+        bookCode: bookCode,
+        bookName: bookName,
+        writter: writter,
+        company: company,
+        price: price
+    }
+
+    let tr = makeTr(obj);
+    document.querySelector('#list>table>tbody').appendChild(tr);
+    let de = document.querySelectorAll('input');
+    for (var i = 0; i < de.length; i++) {
+        de[i].value = "";
+    }
+
+}
+
+// 삭제버튼 이벤트 등록
+let delBtn = document.querySelector('#btn>button:nth-child(2)');
+delBtn.addEventListener('click', delCallback);
+
+function delCallback() {
+    let chks = document.querySelectorAll('tbody input[type="checkbox"]');
+    for (let i = 0; i < chks.length; i++) {
+        if (chks[i].checked == true) {
+            chks[i].parentNode.parentNode.remove();
+        }
+    }
+}
+
+
+    </script>
+
+</body>
+
+</html>
