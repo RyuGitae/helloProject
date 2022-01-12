@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>api/exe.html</title>
+    <style>
+        #show>span {
+            display: inline-block;
+            width: 120px;
+            background-color: yellow;
+            padding: 5px;
+            margin: 3px;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var show = document.getElementById('show');
+            var data =
+                `Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt officiis, ipsum quod, rem quibusdam esse voluptate impedit sapiente libero asperiores illum, aperiam magnam! Quisquam adipisci repudiandae voluptatibus aliquam architecto et.`;
+            var dataAry = data.split(' ');
+            console.log(dataAry);
+            dataAry.forEach(function (shortWord) {
+                var span = document.createElement('span');
+                span.innerText = shortWord;
+                show.appendChild(span);
+
+            });
+
+            // 버튼 이벤트 등록.
+            var delBtn = document.getElementById('searchBtn');
+            delBtn.addEventListener('click', delFnc);
+
+            // 사용자 입력 input
+            var inputElem = document.getElementById('inputWord') // 고민
+            inputElem.addEventListener('change', delFnc);
+
+            function chk() {
+                var inputText = inputElem.value
+                console.log(inputText)
+                var searchWord = inputText
+            }
+
+            function delFnc() {
+                // 화면의 span읽어와서.
+                var wordAry = document.querySelectorAll("span"); //고민.
+
+                // 사용자의 입력값 => value 속성
+
+                wordAry.forEach(function (dataAry) {
+                    // 비교해서 값이 같으면 element.remove();
+                    if (inputElem.value == dataAry.innerText) {
+                        dataAry.remove()
+                    }
+                });
+            }
+            // 추가 버튼 이벤트 등록.
+            var addBtn = document.getElementById('addBtn');
+            addBtn.addEventListener('click', addFnc);
+
+            var addElem =document.getElementById('inputWord')
+            addElem.addEventListener('change', addFnc);
+
+            function addFnc() {
+                var inputText = addElem.value
+                var addWord = inputText
+                document.createElement('span');
+                span.innerText = inputText;
+                //.push(addWord);
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <input type="text" name="inputWord" id="inputWord">
+    <button id="searchBtn">삭제</button>
+    <button id="addBtn">추가</button>
+    <br>
+    <div id="show"></div>
+</body>
+
+</html>
